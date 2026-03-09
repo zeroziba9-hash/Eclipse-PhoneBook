@@ -21,3 +21,5 @@ phonebook-data.csv
 phonebook-data.json
 phonebook-trash.csv
 backup/
+bin/
+
