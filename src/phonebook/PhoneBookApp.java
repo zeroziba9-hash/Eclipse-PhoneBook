@@ -11,6 +11,7 @@ public class PhoneBookApp {
             switch (choice) {
                 case 1:
                     manager.inputData();
+                    manager.saveToFile(); // 추가 후 자동 저장
                     MenuViewer.pause();
                     break;
                 case 2:
@@ -19,10 +20,12 @@ public class PhoneBookApp {
                     break;
                 case 3:
                     manager.updateData();
+                    manager.saveToFile(); // 수정 후 자동 저장
                     MenuViewer.pause();
                     break;
                 case 4:
                     manager.deleteData();
+                    manager.saveToFile(); // 삭제 후 자동 저장
                     MenuViewer.pause();
                     break;
                 case 5:
@@ -36,10 +39,12 @@ public class PhoneBookApp {
                     break;
                 case 7:
                     manager.toggleFavorite();
+                    manager.saveToFile(); // 즐겨찾기 변경 후 자동 저장
                     MenuViewer.pause();
                     break;
                 case 8:
                     manager.restoreFromTrash();
+                    manager.saveToFile(); // 복구 후 자동 저장
                     MenuViewer.pause();
                     break;
                 case 9:
