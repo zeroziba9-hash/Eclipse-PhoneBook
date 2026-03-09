@@ -137,12 +137,13 @@ java -cp out phonebook.PhoneBookApp
 
 ## 7) 실행 스크린샷
 
-아래 이미지를 기준으로 README에 반영했습니다.
+아래는 실제 실행 화면입니다.
 
-- 콘솔 메뉴 실행 화면
-- Eclipse 프로젝트 구조 화면
+- **콘솔 메뉴 화면**: 기능 선택(추가/검색/수정/삭제/저장/GUI 실행 등)
+- **프로젝트 구조 화면**: Eclipse에서 소스/출력/데이터 파일 구성
 
-파일 경로(저장 권장):
+> 스크린샷 파일은 `docs/screenshots` 폴더에 두면 README에서 바로 표시됩니다.
+
 - `docs/screenshots/console-menu.png`
 - `docs/screenshots/eclipse-structure.png`
 
