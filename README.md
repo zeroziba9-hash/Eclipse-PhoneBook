@@ -139,7 +139,10 @@ java -cp out phonebook.PhoneBookApp
 
 콘솔 메뉴 화면이랑 Eclipse 프로젝트 구조 화면입니다.
 
+### 콘솔 메뉴 화면
 ![Console Menu](docs/screenshots/console-menu.png)
+
+### Eclipse 프로젝트 구조 화면
 ![Eclipse Structure](docs/screenshots/eclipse-structure.png)
 
 ---
