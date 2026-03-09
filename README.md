@@ -62,18 +62,57 @@ src/
 
 ---
 
-## 5) 주요 코드 포인트
+## 5) 주요 실행 코드
 
-### (1) 자동 포맷팅
-- `PhoneBookManager.autoFormatPhone()`
-- `PhoneBookManager.autoFormatBirth()`
+### (1) 메인 실행 루프 (`PhoneBookApp.java`)
+```java
+public class PhoneBookApp {
+    public static void main(String[] args) {
+        PhoneBookManager manager = new PhoneBookManager();
+        manager.loadFromFile();
 
-### (2) 입력 검증 + 재입력 루프
-- `PhoneBookManager.inputData()`
-  - 전화번호/이메일/생년월일 형식 검증
-  - 잘못된 값은 즉시 재입력
+        while (true) {
+            int choice = MenuViewer.showMenu();
+            switch (choice) {
+                case 1:
+                    manager.inputData();
+                    manager.saveToFile();
+                    break;
+                // ... 중략 ...
+                case 13:
+                    manager.saveToFile();
+                    return;
+            }
+        }
+    }
+}
+```
 
-### (3) 저장 전략
+### (2) 입력 검증 + 재입력 (`PhoneBookManager.inputData()`)
+```java
+while (true) {
+    phone = autoFormatPhone(MenuViewer.inputLine("전화번호"));
+    if (isValidPhone(phone)) break;
+    System.out.println("잘못된 입력입니다. 전화번호를 다시 입력하세요.");
+}
+
+while (true) {
+    birth = autoFormatBirth(MenuViewer.inputLine("생년월일"));
+    if (isValidBirth(birth)) break;
+    System.out.println("잘못된 입력입니다. 생년월일을 다시 입력하세요.");
+}
+```
+
+### (3) 자동 포맷팅
+```java
+// 01000000000 -> 010-0000-0000
+public String autoFormatPhone(String phone) { ... }
+
+// 19950101 -> 1995-01-01
+public String autoFormatBirth(String birth) { ... }
+```
+
+### (4) 저장 전략
 - 수동 저장: 메뉴 `9`
 - 종료 저장: 메뉴 `13`
 - 자동 저장: 추가/수정/삭제/즐겨찾기/복구 직후 저장
@@ -98,13 +137,17 @@ java -cp out phonebook.PhoneBookApp
 
 ## 7) 실행 스크린샷
 
-> 스크린샷은 아래 경로에 추가해두면 README에서 바로 보입니다.
+아래 이미지를 기준으로 README에 반영했습니다.
 
+- 콘솔 메뉴 실행 화면
+- Eclipse 프로젝트 구조 화면
+
+파일 경로(저장 권장):
 - `docs/screenshots/console-menu.png`
-- `docs/screenshots/gui-main.png`
+- `docs/screenshots/eclipse-structure.png`
 
 ![Console Menu](docs/screenshots/console-menu.png)
-![Swing GUI](docs/screenshots/gui-main.png)
+![Eclipse Structure](docs/screenshots/eclipse-structure.png)
 
 ---
 
