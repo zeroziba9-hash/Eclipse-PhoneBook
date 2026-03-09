@@ -15,3 +15,9 @@ Thumbs.db
 # phonebook-data.json
 # phonebook-trash.csv
 # backup/
+
+# Runtime data (ignored)
+phonebook-data.csv
+phonebook-data.json
+phonebook-trash.csv
+backup/
